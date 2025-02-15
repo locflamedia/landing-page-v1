@@ -25,9 +25,11 @@ jobs:
 
       - name: Build project
         run: |
-          npm run build || echo "Build failed!"
+          mkdir -p ./logs
+          npm run build > ./logs/build.log 2>&1 || echo "Build failed!"
           echo "Build logs:"
           cat ./logs/build.log
+          
         env:
           API_URL: ${{ secrets.API_URL }}
           API_KEY: ${{ secrets.API_KEY }}
@@ -41,10 +43,10 @@ jobs:
           echo "Workspace contents:"
           ls -R
           echo "Output contents:"
-          if [ -d "./output" ]; then
-            ls -R ./output
+          if [ -d "./.output" ]; then
+            ls -R ./.output
           else
-            echo "Directory ./output does not exist!"
+            echo "Directory ./.output does not exist!"
           fi
 
       - name: Test GITHUB_TOKEN permissions
@@ -63,6 +65,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./output
+          publish_dir: ./.output/public
           force_orphan: true
           keep_files: false
