@@ -7,6 +7,10 @@ export default defineNuxtConfig({
     buildAssetsDir: "assets",
   },
 
+  build: {
+    dir: "output",
+  },
+
   runtimeConfig: {
     public: {
       apiUrl: process.env.API_URL,
