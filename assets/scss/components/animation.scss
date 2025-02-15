@@ -1,0 +1,137 @@
+.gg-spinner {
+  transform: scale(var(--ggs, 1));
+}
+
+.gg-spinner,
+.gg-spinner::after,
+.gg-spinner::before {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+}
+
+.gg-spinner::after,
+.gg-spinner::before {
+  content: "";
+  position: absolute;
+  border-radius: 100px;
+}
+
+.gg-spinner::before {
+  animation: spinner 1s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+  border: 3px solid transparent;
+  border-top-color: currentColor;
+}
+
+.gg-spinner::after {
+  border: 3px solid;
+  opacity: 0.2;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.plus-close {
+  @apply relative size-3 -rotate-45 transition-all duration-300 ease-in-out;
+
+  span {
+    @apply absolute top-1/2 h-[.5px] w-3 -translate-y-1/2 rounded-full bg-black;
+
+    &:nth-child(1) {
+      @apply -rotate-45;
+    }
+
+    &:nth-child(2) {
+      @apply rotate-45;
+    }
+  }
+}
+
+.plus-close.active {
+  @apply rotate-0;
+}
+
+.plusminus {
+  @apply relative size-3 cursor-pointer;
+  &.active {
+    &:before {
+      @apply -translate-y-1/2 -rotate-90 opacity-0;
+    }
+    &:after {
+      @apply -translate-y-1/2 rotate-0;
+    }
+  }
+  &:before,
+  &:after {
+    @apply absolute left-0 top-1/2 block h-px w-full bg-black transition-[0.35s] content-[''];
+  }
+  &:before {
+    @apply -translate-y-1/2;
+  }
+  &:after {
+    @apply -translate-y-1/2 rotate-90;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// ===== SCALE ANIMATIONS =====
+// Basic Scale
+.scale-enter-active,
+.scale-leave-active {
+  transition: all 0.3s ease;
+}
+
+.scale-enter-from,
+.scale-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+// Scale with Fade
+.scale-fade-enter-active,
+.scale-fade-leave-active {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scale-fade-enter-from,
+.scale-fade-leave-to {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.hover-underline-animation {
+  position: relative;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: var(--underline-offset, 4px);
+
+  @media (hover: hover) and (pointer: fine) {
+    transition: text-decoration-color 0.3s ease;
+
+    &:hover {
+      text-decoration-color: currentColor;
+    }
+  }
+
+  &--6px {
+    --underline-offset: 6px;
+  }
+}
