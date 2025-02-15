@@ -36,31 +36,6 @@ jobs:
           FRONTEND_URL: ${{ secrets.FRONTEND_URL }}
           IS_PRODUCTION: ${{ secrets.IS_PRODUCTION }}
 
-      - name: Debug workspace
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "Workspace contents:"
-          ls -R
-          echo "Output contents:"
-          if [ -d "./.output" ]; then
-            ls -R ./.output
-          else
-            echo "Directory ./.output does not exist!"
-          fi
-
-      - name: Test GITHUB_TOKEN permissions
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout -b test-branch
-          echo "Test file" > test.txt
-          git add test.txt
-          git commit -m "Test commit"
-          git push origin test-branch
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
