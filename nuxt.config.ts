@@ -17,7 +17,8 @@ export default defineNuxtConfig({
 
   nitro: {
     routeRules: {
-      "/**": { proxy: process.env.API_URL + "/landing-page-v1/**" },
+      "/**": { proxy: process.env.API_URL + "/**" },
+      // "/**": { proxy: process.env.API_URL + "/landing-page-v1/**" },
     },
     output: {
       publicDir: "dist",
