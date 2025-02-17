@@ -7,10 +7,10 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiUrl: "https://locflamedia.github.io",
+      apiUrl: process.env.API_URL,
       apiKey: process.env.API_KEY,
-      frontendUrl: "https://locflamedia.github.io",
-      isProduction: "true",
+      frontendUrl: process.env.FRONTEND_URL,
+      isProduction: process.env.NUXT_PUBLIC_IS_PRODUCTION,
     },
   },
 
@@ -18,8 +18,9 @@ export default defineNuxtConfig({
     routeRules: {
       "/api/v1/**": { proxy: process.env.API_URL + "/**" },
     },
+    serverStatic: true,
     output: {
-      publicDir: "dist",
+      publicDir: "ladning-page-v1/dist",
     },
   },
 
