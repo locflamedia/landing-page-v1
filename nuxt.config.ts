@@ -19,6 +19,9 @@ export default defineNuxtConfig({
     routeRules: {
       "/api/v1/**": { proxy: process.env.API_URL + "/**" },
     },
+    output: {
+      publicDir: "dist",
+    },
   },
 
   app: {
