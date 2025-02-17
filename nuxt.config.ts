@@ -2,7 +2,7 @@ export default defineNuxtConfig({
   devtools: { enabled: !process.env.NUXT_PUBLIC_IS_PRODUCTION },
 
   app: {
-    baseURL: "https://locflamedia.github.io/landing-page-v1",
+    baseURL: "/landing-page-v1/",
     buildAssetsDir: "_nuxt/",
   },
 
@@ -17,7 +17,7 @@ export default defineNuxtConfig({
 
   nitro: {
     routeRules: {
-      "/**": { proxy: process.env.API_URL + "/**" },
+      "/**": { proxy: process.env.API_URL + "/landing-page-v1/**" },
     },
     output: {
       publicDir: "dist",
