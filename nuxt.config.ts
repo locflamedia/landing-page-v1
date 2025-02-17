@@ -9,10 +9,10 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiUrl: process.env.API_URL,
+      apiUrl: "https://locflamedia.github.io/landing-page-v1",
       apiKey: process.env.API_KEY,
-      frontendUrl: process.env.FRONTEND_URL,
-      isProduction: process.env.NUXT_PUBLIC_IS_PRODUCTION,
+      frontendUrl: "https://locflamedia.github.io/landing-page-v1",
+      isProduction: "true",
     },
   },
 
