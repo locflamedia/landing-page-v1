@@ -1,10 +1,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: !process.env.NUXT_PUBLIC_IS_PRODUCTION },
 
-  app: {
-    buildAssetsDir: "_nuxt/",
-  },
-
   runtimeConfig: {
     public: {
       apiUrl: process.env.API_URL,
@@ -17,10 +13,6 @@ export default defineNuxtConfig({
   nitro: {
     routeRules: {
       "/api/v1/**": { proxy: process.env.API_URL + "/**" },
-    },
-    serverStatic: true,
-    output: {
-      publicDir: "ladning-page-v1/dist",
     },
   },
 
