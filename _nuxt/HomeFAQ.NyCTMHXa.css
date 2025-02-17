@@ -1,0 +1,1 @@
+.jam-accordion-title{align-items:center;cursor:pointer;display:flex}.jam-accordion-content{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s}.active .jam-accordion-content{grid-template-rows:1fr}
