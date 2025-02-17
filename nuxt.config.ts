@@ -17,7 +17,7 @@ export default defineNuxtConfig({
 
   nitro: {
     routeRules: {
-      "/api/v1/**": { proxy: process.env.API_URL + "/**" },
+      "/**": { proxy: process.env.API_URL + "/**" },
     },
     output: {
       publicDir: "dist",
