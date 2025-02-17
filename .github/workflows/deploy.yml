@@ -31,10 +31,10 @@ jobs:
           cat ./logs/build.log
           
         env:
-          API_URL: ${{ secrets.API_URL }}
-          API_KEY: ${{ secrets.API_KEY }}
-          FRONTEND_URL: ${{ secrets.FRONTEND_URL }}
-          IS_PRODUCTION: ${{ secrets.IS_PRODUCTION }}
+          API_URL: https://locflamedia.github.io/landing-page-v1
+          API_KEY: https://locflamedia.github.io/landing-page-v1
+          FRONTEND_URL: https://locflamedia.github.io/landing-page-v1
+          IS_PRODUCTION: true
 
       - name: Create .nojekyll
         run: touch dist/.nojekyll
