@@ -2,16 +2,14 @@ export default defineNuxtConfig({
   devtools: { enabled: !process.env.NUXT_PUBLIC_IS_PRODUCTION },
 
   app: {
-    baseURL: "/landing-page-v1/",
-    buildAssetsDir: "/landing-page-v1/_nuxt/",
-    cdnURL: "/landing-page-v1",
+    buildAssetsDir: "_nuxt/",
   },
 
   runtimeConfig: {
     public: {
-      apiUrl: "https://locflamedia.github.io/landing-page-v1",
+      apiUrl: "https://locflamedia.github.io",
       apiKey: process.env.API_KEY,
-      frontendUrl: "https://locflamedia.github.io/landing-page-v1",
+      frontendUrl: "https://locflamedia.github.io",
       isProduction: "true",
     },
   },
@@ -23,10 +21,6 @@ export default defineNuxtConfig({
     output: {
       publicDir: "dist",
     },
-  },
-
-  router: {
-    base: "/landing-page-v1/",
   },
 
   app: {
