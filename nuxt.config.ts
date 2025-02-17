@@ -2,7 +2,6 @@ export default defineNuxtConfig({
   devtools: { enabled: !process.env.NUXT_PUBLIC_IS_PRODUCTION },
 
   app: {
-    baseURL: "/landing-page-v1/",
     buildAssetsDir: "/_nuxt/",
   },
 
