@@ -3,7 +3,7 @@ export default defineNuxtConfig({
 
   app: {
     baseURL: "/landing-page-v1/",
-    buildAssetsDir: "_nuxt/",
+    buildAssetsDir: "/landing-page-v1/_nuxt/",
   },
 
   runtimeConfig: {
@@ -17,8 +17,7 @@ export default defineNuxtConfig({
 
   nitro: {
     routeRules: {
-      "/**": { proxy: process.env.API_URL + "/**" },
-      // "/**": { proxy: process.env.API_URL + "/landing-page-v1/**" },
+      "/api/v1/**": { proxy: process.env.API_URL + "/**" },
     },
     output: {
       publicDir: "dist",
@@ -48,7 +47,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxtjs/i18n",
-    "@nuxtjs/sitemap",
+    // "@nuxtjs/sitemap",
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
     "@nuxt/image",
