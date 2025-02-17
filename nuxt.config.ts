@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: "/landing-page-v1/",
     buildAssetsDir: "/landing-page-v1/_nuxt/",
+    cdnURL: "/landing-page-v1",
   },
 
   runtimeConfig: {
@@ -22,6 +23,10 @@ export default defineNuxtConfig({
     output: {
       publicDir: "dist",
     },
+  },
+
+  router: {
+    base: "/landing-page-v1/",
   },
 
   app: {
