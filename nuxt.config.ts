@@ -1,10 +1,11 @@
 export default defineNuxtConfig({
   devtools: { enabled: !process.env.NUXT_PUBLIC_IS_PRODUCTION },
 
-  ssr: false,
+  ssr: true,
+  target: "static",
   app: {
     baseURL: "/landing-page-v1/",
-    buildAssetsDir: "assets",
+    buildAssetsDir: "/_nuxt/",
   },
 
   runtimeConfig: {
