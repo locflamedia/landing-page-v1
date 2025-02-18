@@ -11,8 +11,10 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    routeRules: {
-      "/api/v1/**": { proxy: process.env.API_URL + "/**" },
+    storage: {
+      data: {
+        driver: "vercelKV",
+      },
     },
   },
 

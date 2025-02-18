@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@nuxt/image':
         specifier: ^1.9.0
-        version: 1.9.0(db0@0.2.4)(ioredis@5.5.0)(magicast@0.3.5)
+        version: 1.9.0(@upstash/redis@1.34.4)(@vercel/kv@3.0.0)(db0@0.2.4)(ioredis@5.5.0)(magicast@0.3.5)
       '@nuxtjs/i18n':
         specifier: ^8.3.1
         version: 8.5.6(magicast@0.3.5)(rollup@4.34.7)(vue@3.5.13(typescript@4.9.5))
@@ -20,6 +20,9 @@ importers:
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@3.4.17(ts-node@10.9.1(@types/node@16.18.11)(typescript@4.9.5)))
+      '@vercel/kv':
+        specifier: ^3.0.0
+        version: 3.0.0
       gsap:
         specifier: ^3.12.7
         version: 3.12.7
@@ -56,7 +59,7 @@ importers:
         version: 1.7.9
       nuxt:
         specifier: ^3.15.4
-        version: 3.15.4(@parcel/watcher@2.5.1)(@types/node@16.18.11)(db0@0.2.4)(ioredis@5.5.0)(magicast@0.3.5)(rollup@4.34.7)(sass@1.85.0)(terser@5.39.0)(typescript@4.9.5)(vite@6.1.0(@types/node@16.18.11)(jiti@2.4.2)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))(yaml@2.7.0)
+        version: 3.15.4(@parcel/watcher@2.5.1)(@types/node@16.18.11)(@upstash/redis@1.34.4)(@vercel/kv@3.0.0)(db0@0.2.4)(ioredis@5.5.0)(magicast@0.3.5)(rollup@4.34.7)(sass@1.85.0)(terser@5.39.0)(typescript@4.9.5)(vite@6.1.0(@types/node@16.18.11)(jiti@2.4.2)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))(yaml@2.7.0)
       pinia:
         specifier: ^2.1.7
         version: 2.3.1(typescript@4.9.5)(vue@3.5.13(typescript@4.9.5))
@@ -976,6 +979,9 @@ packages:
     peerDependencies:
       vue: '>=2.7 || >=3'
 
+  '@upstash/redis@1.34.4':
+    resolution: {integrity: sha512-AZx2iD5s1Pu/KCrRA7KVCffu3NSoaYnNY7N9YI7aLAYhcJfsriQKTe+8OxQWJqGqFbrvm17Lyr9HFnDLvqNpfA==}
+
   '@vercel/build-utils@10.1.0':
     resolution: {integrity: sha512-JPff3brfZx0mTl+0Cmzz220MmnTSYnBgVqVvT6a8lVALJHr75sKaNxZy0/hWZe8ev+w2JwLGMmJwP2TKHtKeHA==}
 
@@ -997,6 +1003,10 @@ packages:
 
   '@vercel/hydrogen@1.1.0':
     resolution: {integrity: sha512-DNBj664OY5j8LBIp9EOLO+zjbSMT95YrfXp3/uhnpdHSmUBE5Iha4bJqV/4b3VL6b4lGFlTsK2jlyQZXWnPs+A==}
+
+  '@vercel/kv@3.0.0':
+    resolution: {integrity: sha512-pKT8fRnfyYk2MgvyB6fn6ipJPCdfZwiKDdw7vB+HL50rjboEBHDVBEcnwfkEpVSp2AjNtoaOUH7zG+bVC/rvSg==}
+    engines: {node: '>=14.6'}
 
   '@vercel/next@4.6.2':
     resolution: {integrity: sha512-+2w9At3cnf5dZRsEMXCSs4xA6UP3UhzVoNa/5/mVY3/hfADEfU/thKwOybQEHPkMbNuFwIYjnJkFZcsI8iOWxg==}
@@ -1561,6 +1571,9 @@ packages:
 
   crossws@0.3.4:
     resolution: {integrity: sha512-uj0O1ETYX1Bh6uSgktfPvwDiPYGQ3aI4qVsaC/LWpkIzGj1nUYm5FK3K+t11oOlpN01lGbprFCH4wBlKdJjVgw==}
+
+  crypto-js@4.2.0:
+    resolution: {integrity: sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==}
 
   css-declaration-sorter@7.2.0:
     resolution: {integrity: sha512-h70rUM+3PNFuaBDTLe8wF/cdWu+dOZmb7pJt8Z2sedYbAcQVQV/tEchueg3GWxwqS0cxtbxmaHEdkNACqcvsow==}
@@ -5009,7 +5022,7 @@ snapshots:
       - utf-8-validate
       - vue
 
-  '@nuxt/image@1.9.0(db0@0.2.4)(ioredis@5.5.0)(magicast@0.3.5)':
+  '@nuxt/image@1.9.0(@upstash/redis@1.34.4)(@vercel/kv@3.0.0)(db0@0.2.4)(ioredis@5.5.0)(magicast@0.3.5)':
     dependencies:
       '@nuxt/kit': 3.15.4(magicast@0.3.5)
       consola: 3.4.0
@@ -5021,7 +5034,7 @@ snapshots:
       std-env: 3.8.0
       ufo: 1.5.4
     optionalDependencies:
-      ipx: 2.1.0(db0@0.2.4)(ioredis@5.5.0)
+      ipx: 2.1.0(@upstash/redis@1.34.4)(@vercel/kv@3.0.0)(db0@0.2.4)(ioredis@5.5.0)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -5557,6 +5570,10 @@ snapshots:
       unhead: 1.11.19
       vue: 3.5.13(typescript@4.9.5)
 
+  '@upstash/redis@1.34.4':
+    dependencies:
+      crypto-js: 4.2.0
+
   '@vercel/build-utils@10.1.0': {}
 
   '@vercel/error-utils@2.0.3': {}
@@ -5604,6 +5621,10 @@ snapshots:
     dependencies:
       '@vercel/static-config': 3.0.0
       ts-morph: 12.0.0
+
+  '@vercel/kv@3.0.0':
+    dependencies:
+      '@upstash/redis': 1.34.4
 
   '@vercel/next@4.6.2(rollup@4.34.7)':
     dependencies:
@@ -6303,6 +6324,8 @@ snapshots:
   crossws@0.3.4:
     dependencies:
       uncrypto: 0.1.3
+
+  crypto-js@4.2.0: {}
 
   css-declaration-sorter@7.2.0(postcss@8.5.2):
     dependencies:
@@ -7084,7 +7107,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ipx@2.1.0(db0@0.2.4)(ioredis@5.5.0):
+  ipx@2.1.0(@upstash/redis@1.34.4)(@vercel/kv@3.0.0)(db0@0.2.4)(ioredis@5.5.0):
     dependencies:
       '@fastify/accept-negotiator': 1.1.0
       citty: 0.1.6
@@ -7100,7 +7123,7 @@ snapshots:
       sharp: 0.32.6
       svgo: 3.3.2
       ufo: 1.5.4
-      unstorage: 1.14.4(db0@0.2.4)(ioredis@5.5.0)
+      unstorage: 1.14.4(@upstash/redis@1.34.4)(@vercel/kv@3.0.0)(db0@0.2.4)(ioredis@5.5.0)
       xss: 1.0.15
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -7543,7 +7566,7 @@ snapshots:
 
   negotiator@0.6.3: {}
 
-  nitropack@2.10.4(typescript@4.9.5):
+  nitropack@2.10.4(@upstash/redis@1.34.4)(@vercel/kv@3.0.0)(typescript@4.9.5):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@netlify/functions': 2.8.2
@@ -7610,7 +7633,7 @@ snapshots:
       unctx: 2.4.1
       unenv: 1.10.0
       unimport: 3.14.6(rollup@4.34.7)
-      unstorage: 1.14.4(db0@0.2.4)(ioredis@5.5.0)
+      unstorage: 1.14.4(@upstash/redis@1.34.4)(@vercel/kv@3.0.0)(db0@0.2.4)(ioredis@5.5.0)
       untyped: 1.5.2
       unwasm: 0.3.9
     transitivePeerDependencies:
@@ -7731,7 +7754,7 @@ snapshots:
       - magicast
       - supports-color
 
-  nuxt@3.15.4(@parcel/watcher@2.5.1)(@types/node@16.18.11)(db0@0.2.4)(ioredis@5.5.0)(magicast@0.3.5)(rollup@4.34.7)(sass@1.85.0)(terser@5.39.0)(typescript@4.9.5)(vite@6.1.0(@types/node@16.18.11)(jiti@2.4.2)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))(yaml@2.7.0):
+  nuxt@3.15.4(@parcel/watcher@2.5.1)(@types/node@16.18.11)(@upstash/redis@1.34.4)(@vercel/kv@3.0.0)(db0@0.2.4)(ioredis@5.5.0)(magicast@0.3.5)(rollup@4.34.7)(sass@1.85.0)(terser@5.39.0)(typescript@4.9.5)(vite@6.1.0(@types/node@16.18.11)(jiti@2.4.2)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))(yaml@2.7.0):
     dependencies:
       '@nuxt/cli': 3.21.1(magicast@0.3.5)
       '@nuxt/devalue': 2.0.2
@@ -7769,7 +7792,7 @@ snapshots:
       magic-string: 0.30.17
       mlly: 1.7.4
       nanotar: 0.2.0
-      nitropack: 2.10.4(typescript@4.9.5)
+      nitropack: 2.10.4(@upstash/redis@1.34.4)(@vercel/kv@3.0.0)(typescript@4.9.5)
       nypm: 0.5.2
       ofetch: 1.4.1
       ohash: 1.1.4
@@ -7791,7 +7814,7 @@ snapshots:
       unimport: 4.1.1
       unplugin: 2.2.0
       unplugin-vue-router: 0.11.2(rollup@4.34.7)(vue-router@4.5.0(vue@3.5.13(typescript@4.9.5)))(vue@3.5.13(typescript@4.9.5))
-      unstorage: 1.14.4(db0@0.2.4)(ioredis@5.5.0)
+      unstorage: 1.14.4(@upstash/redis@1.34.4)(@vercel/kv@3.0.0)(db0@0.2.4)(ioredis@5.5.0)
       untyped: 1.5.2
       vue: 3.5.13(typescript@4.9.5)
       vue-bundle-renderer: 2.1.1
@@ -9073,7 +9096,7 @@ snapshots:
       acorn: 8.14.0
       webpack-virtual-modules: 0.6.2
 
-  unstorage@1.14.4(db0@0.2.4)(ioredis@5.5.0):
+  unstorage@1.14.4(@upstash/redis@1.34.4)(@vercel/kv@3.0.0)(db0@0.2.4)(ioredis@5.5.0):
     dependencies:
       anymatch: 3.1.3
       chokidar: 3.6.0
@@ -9084,6 +9107,8 @@ snapshots:
       ofetch: 1.4.1
       ufo: 1.5.4
     optionalDependencies:
+      '@upstash/redis': 1.34.4
+      '@vercel/kv': 3.0.0
       db0: 0.2.4
       ioredis: 5.5.0
 
