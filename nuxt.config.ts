@@ -1,10 +1,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: !process.env.NUXT_PUBLIC_IS_PRODUCTION },
 
-  generate: {
-    dir: "dist",
-  },
-
   runtimeConfig: {
     public: {
       apiUrl: process.env.API_URL,
